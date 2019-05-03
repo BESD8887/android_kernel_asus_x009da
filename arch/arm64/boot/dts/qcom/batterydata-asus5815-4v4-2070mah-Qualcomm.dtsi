@@ -1,0 +1,126 @@
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+/* +++++ [Arima 5700] 20160303 Conform Battery's Spec & ASUS Spec By Rody */
+/* Because 5700 battery table have not get, I use 5815 battery table */
+qcom,asus5815-4v4-2070mah {
+	qcom,fcc-mah = <2070>;
+	qcom,default-rbatt-mohm = <187>;
+	qcom,rbatt-capacitive-mohm = <50>;
+	qcom,flat-ocv-threshold-uv = <3800000>;
+	qcom,max-voltage-uv = <4400000>;
+	qcom,v-cutoff-uv = <3400000>;
+	qcom,chg-term-ua = <100000>;
+	qcom,batt-id-kohm = <143>;
+	/*[Arima_5833][bozhi_lin] fix apply 5815 battery data will always show 50% 20160412 begin*/
+	qcom,battery-type = "asus5815_4v4_2070mah";
+	/*[Arima_5833][bozhi_lin] 20160412 end*/
+
+	qcom,fcc-temp-lut {
+		qcom,lut-col-legend = <(-20) 0 25 40 60>;
+		qcom,lut-data = <1976 1992 2000 2004 2000>;
+	};
+
+	qcom,pc-temp-ocv-lut {
+		qcom,lut-col-legend = <(-20) 0 25 40 60>;
+		qcom,lut-row-legend = <100 95 90 85 80>,
+				<75 70 65 60 55>,
+				<50 45 40 35 30>,
+				<25 20 16 13 11>,
+				<10 9 8 7 6>,
+				<5 4 3 2 1>,
+				<0>;
+		qcom,lut-data =
+				<4374 4372 4366 4360 4352>,
+				<4236 4280 4296 4296 4291>,
+				<4138 4212 4236 4237 4233>,
+				<4052 4150 4178 4180 4176>,
+				<3981 4093 4122 4124 4120>,
+				<3924 4038 4070 4072 4068>,
+				<3885 3980 4022 4024 4021>,
+				<3858 3930 3978 3980 3977>,
+				<3836 3886 3930 3936 3934>,
+				<3816 3850 3881 3886 3886>,
+				<3796 3819 3846 3850 3850>,
+				<3776 3798 3821 3825 3825>,
+				<3756 3781 3800 3804 3804>,
+				<3734 3765 3784 3787 3786>,
+				<3712 3747 3770 3770 3764>,
+				<3686 3727 3755 3752 3740>,
+				<3656 3707 3732 3728 3714>,
+				<3628 3692 3706 3702 3690>,
+				<3600 3679 3684 3680 3670>,
+				<3576 3668 3678 3676 3666>,
+				<3564 3662 3676 3675 3666>,
+				<3550 3654 3674 3674 3664>,
+				<3532 3644 3671 3672 3662>,
+				<3513 3632 3667 3668 3657>,
+				<3492 3616 3656 3653 3636>,
+				<3466 3590 3624 3616 3592>,
+				<3432 3552 3572 3562 3535>,
+				<3381 3496 3500 3490 3461>,
+				<3306 3412 3400 3392 3354>,
+				<3198 3276 3254 3244 3196>,
+				<3000 3000 3000 3000 3000>;
+	};
+
+	qcom,rbatt-sf-lut {
+		qcom,lut-col-legend = <(-20) 0 25 40 60>;
+		qcom,lut-row-legend = <100 95 90 85 80>,
+				<75 70 65 60 55>,
+				<50 45 40 35 30>,
+				<25 20 16 13 11>,
+				<10 9 8 7 6>,
+				<5 4 3 2 1>;
+		qcom,lut-data =
+		<1341 417 99 68 55>,
+		<1341 417 99 68 55>, 
+		<1298 412 101 69 56>, 
+		<1242 405 102 70 57>,
+		<1202 399 105 72 58>,
+		<1180 393 109 74 60>,
+		<1181 380 114 77 62>,
+		<1203 371 121 82 65>,
+		<1231 366 116 87 68>,
+		<1268 364 101 74 61>,
+		<1316 366 96 68 56>,
+		<1410 378 96 69 57>,
+		<1619 398 98 72 60>,
+		<1947 428 101 73 63>,
+		<2382 467 103 73 60>,
+		<2993 522 106 71 57>,
+		<3944 607 110 69 57>,
+		<5065 707 112 70 56>,
+		<6502 805 112 69 57>,
+		<7840 886 120 72 59>,
+		<8696 927 124 74 60>,
+		<9518 968 131 77 62>,
+		<10996 1009 139 80 64>,
+		<12567 1017 142 82 64>,
+		<14179 1042 147 81 61>,
+		<17005 1167 145 78 60>,
+		<21103 1459 147 80 63>,
+		<27881 2013 164 88 71>,
+		<40088 3142 199 104 83>,
+		<67212 6284 397 170 167>;
+	};
+
+	qcom,ibat-acc-lut {
+		qcom,lut-col-legend = <(-20) 0 25>;
+		qcom,lut-row-legend = <0 250 500 1000>;
+		qcom,lut-data = <1470 1470 1473>,
+				<601 1406 1430>,
+				<89 1247 1414>,
+				<8 764 1338>;
+	};
+};
+/* ----- [Arima 5700] 20160303 Conform Battery's Spec & ASUS Spec By Rody */

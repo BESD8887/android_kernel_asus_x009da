@@ -1,0 +1,13 @@
+#include "msm8916-mtp-arima-5830.dtsi"
+
+//[5830][RGB Led] Porting ktd2037 driver in kernel PT Chang 20160207 S
+&soc {
+	i2c@78b8000 { /* BLSP1 QUP4 */
+		ktd2037@30 {
+			compatible = "leds,ktd2037";
+			reg = <0x30>;
+			vcc_i2c-supply = <&pm8916_l6>;
+		};
+	};
+};
+//[5830][RGB Led] Porting ktd2037 driver in kernel PT Chang 20160207 E
